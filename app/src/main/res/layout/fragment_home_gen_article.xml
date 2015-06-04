@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.derbi.mk.widgets.QuickReturnRecyclerView
+        android:id="@+id/qrRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:id="@+id/rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:layout_gravity="bottom">
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/bbHomeFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingRight="2dp"
+            android:text="@string/facebookDerbi"
+            bootstrapbutton:bb_icon_left="fa-facebook"
+            card:bb_size="default"
+            card:bb_type="primary"/>
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/bbHomeTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/twitterDerbi"
+            card:bb_size="default"
+            bootstrapbutton:bb_icon_left="fa-twitter"
+            card:bb_type="info"/>
+    </LinearLayout>
+
+
+
+</FrameLayout>

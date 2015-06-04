@@ -1,0 +1,67 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="DerbiAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/derbiPrimaryGray</item>
+        <item name="colorPrimaryDark">@color/derbiPrimaryDarkGray</item>
+        <item name="android:textColor">@color/White</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+
+    <style name="Widget.DerbiMk.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/derbiPrimaryGray</item>
+        <item name="theme">@style/ThemeOverlay.DerbiMk.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="ThemeOverlay.DerbiMk.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/White</item>
+        <item name="android:textColorSecondary">@color/Black</item>
+    </style>
+
+
+    <style name="categoriesMainText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="categoriesSubText">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="mainDescCardStyle">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+
+    <style name="moreCardStyle">
+        <item name="android:textColor">@color/derbiBlue</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="dateCardStyle">
+        <item name="android:textColor">@color/derbiPrimaryGray</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+</resources>

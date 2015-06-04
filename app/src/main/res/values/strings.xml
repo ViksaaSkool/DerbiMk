@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Дерби</string>
+
+    <!-- Content Related -->
+    <string name="testString">Долг стринг само зааради тестирање и никаква друга цел, колку да видиме како ова ќе изгледа. Сигурно многу убаво</string>
+    <string name="more">Повеќе</string>
+    <string name="date">Датум на објава:</string>
+    <string name="title">Наслов на вест</string>
+    <string name="dummyTitle">Чисто онака</string>
+    <string name="fetchNews">Вчитувам вести&#8230;</string>
+    <string name="pleaseWait">Ве молиме почекајте</string>
+    <string name="noInternet">Нема Интернет :(</string>
+    <string name="smtWentWrong">Хммм&#8230; Нешто не е во ред</string>
+    <string name="noNews">Нема нови вести</string>
+    <string name="article">Вест</string>
+    <string name="categories">Категории</string>
+    <string name="contact">Контакт</string>
+    <string name="about">За Апликацијата</string>
+
+    <!-- Share Related -->
+    <string name="share">Сподели</string>
+    <string name="shareNews">Сподели ја веста преку:</string>
+    <string name="facebookDerbi">Дерби.мк на Фејсбук</string>
+    <string name="twitterDerbi">Дерби.мк на Твитер</string>
+
+
+    <!-- Typed Arrayz -->
+    <array name="catListImgs">
+        <item>@drawable/football</item>
+        <item>@drawable/basketball</item>
+        <item>@drawable/handball</item>
+        <item>@drawable/motosport</item>
+        <item>@drawable/sport_plus</item>
+        <item>@drawable/tennis</item>
+        <item>@drawable/magazine</item>
+    </array>
+
+    <array name="navDrawerIcn">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_categories</item>
+        <item>@drawable/ic_notifications_off</item>
+        <item>@drawable/ic_quick_contacts</item>
+        <item>@drawable/ic_info</item>
+    </array>
+
+    <!-- Categories -->
+    <string name="fudbal">Фудбал</string>
+    <string name="kosharka">Koшарка</string>
+    <string name="rakomet">Ракомет</string>
+    <string name="motosport">Мотоспорт</string>
+    <string name="sportPlus">Спорт  Плус</string>
+    <string name="tenis">Тенис</string>
+    <string name="magazin">Магазин</string>
+
+    <string-array name="fudbalArr">
+
+        <item>Репрезентација</item>
+        <item>Македонија</item>
+        <item>Англија</item>
+        <item>Шпанија</item>
+        <item>Италија</item>
+        <item>Германија</item>
+        <item>Свет</item>
+        <item>Лига на Шампиони</item>
+        <item>Лига Европа</item>
+        <item>Европски Првенства</item>
+        <item>Светски Првенства</item>
+    </string-array>
+
+    <string-array name="kosharkaArr">
+        <item>Репрезентација</item>
+        <item>Македонија</item>
+        <item>НБА</item>
+        <item>Евролига</item>
+        <item>АБА лига</item>
+        <item>БИБЛ лига</item>
+        <item>Свет</item>
+        <item>Европски Првенства</item>
+        <item>Светски Првенства</item>
+    </string-array>
+
+    <string-array name="rakometArr">
+        <item>Репрезентација</item>
+        <item>Македонија</item>
+        <item>Лига на Шампиони</item>
+        <item>Европски купови</item>
+        <item>СЕХА лига</item>
+        <item>Европски Првенства</item>
+        <item>Светски Првенства</item>
+        <item>Свет</item>
+    </string-array>
+
+    <string-array name="tenisArr">
+        <item>АТП</item>
+        <item>ВТА</item>
+        <item>Дејвис куп</item>
+        <item>ФЕД куп</item>
+    </string-array>
+
+    <string-array name="motosportArr">
+        <item>Формула 1</item>
+        <item>Рели</item>
+        <item>Мото ГП</item>
+        <item>Екстремни спортови</item>
+        <item>МК трки</item>
+        <item>Меѓународни настани</item>
+    </string-array>
+
+    <string-array name="sportPlusArr">
+        <item>Одбојка</item>
+        <item>Атлетика</item>
+        <item>Велосипедизам</item>
+        <item>Скијање</item>
+        <item>Хокеј</item>
+        <item>Пливање</item>
+        <item>Ватерполо</item>
+        <item>Бокс</item>
+        <item>Меѓународни настани</item>
+        <item>Олимписки игри</item>
+    </string-array>
+
+    <string-array name="magazinArr">
+        <item>Таблоид</item>
+        <item>Млади спортисти</item>
+        <item>Исхрана и вежбање</item>
+        <item>Автомобили</item>
+        <item>Типување</item>
+    </string-array>
+
+    <string-array name="navDrawerMenu">
+        <item>Дома</item>
+        <item>Категории</item>
+        <item>Нотификации</item>
+        <item>Контакт</item>
+        <item>About</item>
+    </string-array>
+
+    <!-- Notifications related -->
+    <string name="notificationsON">Нотификациите се вклучени</string>
+    <string name="notificationsOFF">Нотификациите се исклучени</string>
+    <string name="notificationTitle">Време е за Дерби!</string>
+    <string name="notificationString">Провери ли што има ново во светот на спортот?</string>
+    <string name="notificationNewString">Провери ли што има ново во светот на спортот?</string>
+    <string name="slowInternet">Мислам дека е можно Интернетот да ти е многу бавен :(</string>
+
+    <string name="mailName">Избери Апликација</string>
+    <string name="mailTextAddition">- Пратено од ДербиМК Android App -</string>
+    <string name="mailTitle">Внеси наслов на поракта</string>
+
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+
+    <string name="blashko">Блашко\nВељановски</string>
+    <string name="dimitar">Димитар\nКрстевски</string>
+    <string name="filip">Филип\nВандовски</string>
+    <string name="alek">Александар\nБогоевски</string>
+    <string name="toni">Антонио\nАндонов</string>
+
+    <string name="redakcija">Редакција:</string>
+    <string name="kolumnist">Колумнист:</string>
+    <string name="osnovach">Основач:</string>
+    <string name="tabak"> Александар\n Табаковски</string>
+    <string name="fileT">Игор Филевски - „Топки“</string>
+
+    <string name="tabakMail">aleksandar.tabakovski@gmail.com</string>
+    <string name="defaultkMail">redakcija.derbi@gmail.com</string>
+
+    <string name="developpedBy">Developed by: \nViktor Arsovski</string>
+    <string name="iconsUsed">Icons used: </string>
+    <string name="vMail">victor.arsovski@gmail.com</string>
+    <string name="rPlay">Rate Дерби: </string>
+
+
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.derbi.mk.navdrawer.FragmentNavigationDrawer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navDrawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <!-- The ActionBar -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            style="@style/Widget.DerbiMk.ActionBar"/>
+
+        <!--<android.support.v4.view.ViewPager
+            android:id="@+id/vpPager"
+            android:visibility="gone"
+            android:background="@color/derbiPrimaryGray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />-->
+
+        <com.astuetz.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            app:pstsShouldExpand="true"
+            app:pstsTextAllCaps="true"
+            android:visibility="gone"
+            android:background="@color/derbiPrimaryGray"
+            android:layout_width="match_parent"
+            app:pstsIndicatorColor="@color/derbiBlue"
+            android:layout_height="48dp"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@color/derbiPrimaryGray" />
+
+        <!-- The main content view -->
+        <FrameLayout
+            android:id="@+id/mainFragment"
+            android:background="@color/derbiBckg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <!-- The navigation drawer -->
+    <ListView
+        android:id="@+id/lvDrawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:paddingTop="24dp"
+        android:divider="@color/derbiBlue"
+        android:dividerHeight="1dp"
+        android:background="@color/derbiLightGray" />
+</com.derbi.mk.navdrawer.FragmentNavigationDrawer>
