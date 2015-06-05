@@ -9,7 +9,6 @@ import android.view.View;
 import com.astuetz.PagerSlidingTabStrip;
 import com.derbi.mk.R;
 import com.derbi.mk.adapters.FragmentTabAdapter;
-import com.derbi.mk.adapters.TabsFragmentVPAdapter;
 import com.derbi.mk.cnst.Static;
 import com.derbi.mk.cnst.Urlz;
 import com.derbi.mk.fragment.GenCategoriesFragment;
@@ -36,7 +35,6 @@ public class GenCategoriesActivity extends BaseActivity {
     ViewPager mVpPager;
 
 
-    private TabsFragmentVPAdapter mTabsAdapter;
     private String[] mTabUrlz;
     private boolean firstTime = true;
 
