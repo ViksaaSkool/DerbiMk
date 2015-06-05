@@ -9,7 +9,6 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.derbi.mk.R;
-import com.derbi.mk.cnst.Urlz;
 import com.derbi.mk.utils.SocialUtil;
 
 import butterknife.ButterKnife;
@@ -25,8 +24,6 @@ public class AboutDialog extends DialogFragment implements View.OnClickListener 
 
     @InjectView(R.id.bContactMail)
     ImageView mBContactMail;
-    @InjectView(R.id.bIcons8)
-    ImageView mBIcons8;
     @InjectView(R.id.bRate)
     ImageView mBRate;
 
@@ -56,11 +53,7 @@ public class AboutDialog extends DialogFragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.bIcons8:
-                SocialUtil.openLinkInBrowser(getActivity(), Urlz.ICN8);
-                break;
-
-            case R.id.bContactMail:
+           case R.id.bContactMail:
                 SocialUtil.sendMailTo(getActivity(), getString(R.string.vMail));
                 break;
 
@@ -83,7 +76,6 @@ public class AboutDialog extends DialogFragment implements View.OnClickListener 
 
     public void initDialog() {
         //set listeners
-        mBIcons8.setOnClickListener(this);
         mBContactMail.setOnClickListener(this);
         mBRate.setOnClickListener(this);
 

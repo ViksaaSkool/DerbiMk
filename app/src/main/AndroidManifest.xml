@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
+    <!-- Parse.com Push Notifications -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -14,8 +14,12 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
 
-    <permission android:protectionLevel="signature" android:name="com.derbi.mk.permission.C2D_MESSAGE" />
+    <permission
+        android:name="com.derbi.mk.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
     <uses-permission android:name="com.derbi.mk.permission.C2D_MESSAGE" />
+    <!-- END Parse.com Push Notifications -->
+
     <!-- END Permissions -->
 
     <!-- Application -->
@@ -29,8 +33,8 @@
         <!-- Activities -->
         <activity
             android:name=".activity.SplashScreenActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -40,15 +44,13 @@
 
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activity.GenCategoriesActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/categories">
-        </activity>
+            android:label="@string/categories"
+            android:screenOrientation="portrait"></activity>
         <!-- END Activities -->
 
         <!-- Receivers -->
@@ -63,7 +65,8 @@
             </intent-filter>
         </receiver>
         <!-- com.parse.ParsePushBroadcastReceiver -->
-        <receiver android:name="com.derbi.mk.notifications.NotifReceiver"
+        <receiver
+            android:name="com.derbi.mk.notifications.NotifReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
@@ -71,18 +74,22 @@
                 <action android:name="com.parse.push.intent.OPEN" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.parse.GcmBroadcastReceiver"
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
                 <category android:name="com.derbi.mk" />
             </intent-filter>
         </receiver>
         <!-- END Parse.com -->
 
         <!-- MetaData -->
-        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_d_notification"/>
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@drawable/ic_d_notification" />
         <!-- END MetaData -->
 
     </application>
