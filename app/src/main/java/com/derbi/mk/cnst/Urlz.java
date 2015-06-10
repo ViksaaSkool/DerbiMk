@@ -138,5 +138,5 @@ public class Urlz {
 	//other
 	public static final String PLAY_M = "market://details?id=" ;
 	public static final String PLAY_URL = "http://play.google.com/store/apps/details?id=";
-	public static final String ICN8 = "https://icons8.com";
+	public static final String ICN8 = "https://icons8.com/license/";
 }

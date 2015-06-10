@@ -8,8 +8,8 @@ android {
         applicationId "com.derbi.mk"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 21
-        versionName "2.0.1"
+        versionCode 22
+        versionName "2.0.2"
     }
     buildTypes {
         release {
