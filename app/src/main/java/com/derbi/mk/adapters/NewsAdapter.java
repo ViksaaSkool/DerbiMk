@@ -48,11 +48,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.SimpleItemView
         ImageView icnTwitter;
         ImageView icnReadMore;
         TextView title;
+        TextView dateText;
         RelativeLayout container;
 
         public SimpleItemViewHolder(View view) {
             super(view);
             date = (TextView) view.findViewById(R.id.pubDate);
+            dateText = (TextView) view.findViewById(R.id._pubDate);
             shortDesc = (TextView) view.findViewById(R.id.descNews);
             newsPic = (ImageView) view.findViewById(R.id.imgNewsPic);
             icnReadMore = (ImageView) view.findViewById(R.id.icnMore);
@@ -86,10 +88,20 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.SimpleItemView
             holder.shortDesc.setText(UIUtil.shortDsc(mArticles.get(position).getDescription()));
         else
             holder.shortDesc.setText("");
-        if (mArticles.get(position) != null)
-            holder.date.setText(UIUtil.formatDate(mArticles.get(position).getDate()));
-        else
+        if (mArticles.get(position) != null){
+            String date = UIUtil.formatDate(mArticles.get(position).getDate());
+            if (!date.contains("1970")){
+                holder.date.setText(date);
+            }
+            else {
+                holder.date.setText("");
+                holder.dateText.setText("");
+            }
+        }
+        else {
             holder.date.setText("");
+        }
+
 
         if (mArticles.get(position).getImage() != null && !mArticles.get(position).getImage().toString().isEmpty())
             Glide.with(mActivity).load(mArticles.get(position).getImage().toString()).into(holder.newsPic);

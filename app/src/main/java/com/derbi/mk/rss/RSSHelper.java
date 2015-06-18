@@ -25,7 +25,7 @@ public class RSSHelper {
             @Override
             public ArrayList<Article> doInBackground() throws Exception {
                 ArrayList<Article> a = (ArrayList) PkRSS.with(ba).load(url).parser(new CustomParser()).get();
-                return a;
+                return new ArrayList<>(a.subList(0,9));
             }
         }, new Completion<ArrayList<Article>>() {
             @Override
