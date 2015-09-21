@@ -8,8 +8,8 @@ android {
         applicationId "com.derbi.mk"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 22
-        versionName "2.0.2"
+        versionCode 23
+        versionName "2.0.3"
     }
     buildTypes {
         release {
@@ -41,8 +41,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     /* Support libs */
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.android.support:recyclerview-v7:21.0.3'
-    compile 'com.android.support:cardview-v7:21.0.3'
+    compile 'com.android.support:recyclerview-v7:22.1.1'
+    compile 'com.android.support:cardview-v7:22.1.1'
     /* Parse.com */
     compile 'com.parse.bolts:bolts-android:1.+'
     compile fileTree(dir: 'libs', include: 'Parse-*.jar')
