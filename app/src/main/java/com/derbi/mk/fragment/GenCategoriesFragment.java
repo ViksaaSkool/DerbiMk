@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.derbi.mk.R;
@@ -41,6 +42,8 @@ public class GenCategoriesFragment extends BaseFragment implements RSSCallback, 
     BootstrapButton mBbHomeFacebook;
     @InjectView(R.id.bbHomeTwitter)
     BootstrapButton mBbHomeTwitter;
+    @InjectView(R.id.rlBottom)
+    LinearLayout mRlBottom;
 
 
     private ArrayList<Article> mArticles;
@@ -81,11 +84,11 @@ public class GenCategoriesFragment extends BaseFragment implements RSSCallback, 
 
         LogUtil.dLog(Static.GF_TAG, "GenCategoriesFragment | (mQrRecyclerView != null): " + (mQrRecyclerView != null));
         LogUtil.dLog(Static.GF_TAG, "GenCategoriesFragment | (mArticles == null): " + (mArticles == null));
-        LogUtil.dLog(Static.GF_TAG, "GenCategoriesFragment | loading: " + (loading == false));
+        LogUtil.dLog(Static.GF_TAG, "GenCategoriesFragment | loading: " + (!loading));
         LogUtil.dLog(Static.GF_TAG, "GenCategoriesFragment | (getBaseActivity() != null): " + (getBaseActivity() != null));
 
 
-        if (mQrRecyclerView != null && loading == false && mArticles == null) {
+        if (mQrRecyclerView != null && !loading && mArticles == null) {
             RSSHelper.loadRSS(getBaseActivity(), mCategoryRssURL);
             loading = true;
         } else if (mQrRecyclerView == null && getBaseActivity() != null) {
@@ -102,10 +105,10 @@ public class GenCategoriesFragment extends BaseFragment implements RSSCallback, 
         if (mQrRecyclerView != null) {
             LogUtil.dLog(Static.RSS_TAG, "onRssLoaded(ArrayList<Article> articles)");
             if (articles != null) {
-                _articles = articles;
+                _articles = new ArrayList<>(articles);
 
                 if (ValidationUtil.vRSSList(mArticles, _articles)) {
-                    mArticles = articles;
+                    mArticles = new ArrayList<>(articles);
                     mNewsRecyclerAdapter = new NewsAdapter(getBaseActivity(), mArticles);
                     mQrRecyclerView.setAdapter(mNewsRecyclerAdapter);
                 } else {
@@ -141,6 +144,10 @@ public class GenCategoriesFragment extends BaseFragment implements RSSCallback, 
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
+        if (mArticles != null) {
+            mArticles.clear();
+            mNewsRecyclerAdapter.notifyDataSetChanged();
+        }
 
     }
 
@@ -156,6 +163,8 @@ public class GenCategoriesFragment extends BaseFragment implements RSSCallback, 
 
             mBbHomeFacebook.setOnClickListener(this);
             mBbHomeTwitter.setOnClickListener(this);
+
+            mQrRecyclerView.setReturningView(mRlBottom);
 
             //not in use
             if (getLoadingDialog() == null)

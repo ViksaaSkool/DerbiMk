@@ -3,7 +3,6 @@ package com.derbi.mk.activity;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -24,9 +23,6 @@ import com.derbi.mk.utils.LogUtil;
 import com.derbi.mk.utils.SocialUtil;
 import com.snappydb.SnappydbException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -36,8 +32,8 @@ public class MainActivity extends BaseActivity {
     //views
     @InjectView(R.id.toolbar)
     Toolbar mToolbar;
-    @InjectView(R.id.vpPager)
-    ViewPager mVpPager;
+    /*@InjectView(R.id.vpPager)
+    ViewPager mVpPager;*/
     @InjectView(R.id.lvDrawer)
     ListView mLvDrawer;
     @InjectView(R.id.navDrawer)
@@ -51,9 +47,9 @@ public class MainActivity extends BaseActivity {
 
 
     //viewpager and tabs related variables
-    private String[] mTabUrlz;
+    /*private String[] mTabUrlz;
     private int mCategory, mPosition;
-    private ArrayList<String> mTabTitles;
+    private ArrayList<String> mTabTitles;*/
 
     private String fragmentFlag;
     private String articleURl;
@@ -77,7 +73,8 @@ public class MainActivity extends BaseActivity {
 
             case R.id.action_home:
                 FragmentHelper.setHomeFragment(this);
-                getSupportActionBar().setTitle(R.string.app_name);
+                if (getSupportActionBar() != null)
+                    getSupportActionBar().setTitle(R.string.app_name);
                 return true;
 
             case R.id.action_share:
@@ -119,9 +116,11 @@ public class MainActivity extends BaseActivity {
     public void setToolbarSettings() {
 
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle(R.string.app_name);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.app_name);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
 
         fragmentFlag = getExtras(Static.FRAGMENT_FLAG);
         articleURl = getExtras(Static.ARTICLE_URL);
@@ -225,7 +224,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @SuppressWarnings("unchecked")
+    /*@SuppressWarnings("unchecked")
     public void loadTitlesForPager(int c) {
         mCategory = c;
         mTabTitles = new ArrayList<String>();
@@ -279,7 +278,7 @@ public class MainActivity extends BaseActivity {
                 break;
         }
 
-    }
+    }*/
 
 
 }

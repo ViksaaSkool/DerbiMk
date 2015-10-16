@@ -11,6 +11,7 @@ import com.nanotasks.Completion;
 import com.nanotasks.Tasks;
 import com.pkmmte.pkrss.Article;
 import com.pkmmte.pkrss.PkRSS;
+import com.pkmmte.pkrss.parser.Rss2Parser;
 
 import java.util.ArrayList;
 
@@ -24,8 +25,13 @@ public class RSSHelper {
         Tasks.executeInBackground(ba, new BackgroundWork<ArrayList<Article>>() {
             @Override
             public ArrayList<Article> doInBackground() throws Exception {
-                ArrayList<Article> a = (ArrayList) PkRSS.with(ba).load(url).parser(new CustomParser()).get();
-                return new ArrayList<>(a.subList(0,9));
+                ArrayList<Article> a = removeDuplicates((ArrayList) PkRSS.with(ba).load(url).parser(new Rss2Parser()).get());
+                if (a == null || a.size() == 0)
+                    return new ArrayList<>();
+                else if (a.size() > 10)
+                    return new ArrayList<>(a.subList(0, 9));
+                else
+                    return new ArrayList<>(a.subList(0, a.size() - 1));
             }
         }, new Completion<ArrayList<Article>>() {
             @Override
@@ -40,5 +46,23 @@ public class RSSHelper {
                 rssCallback.onRssLoadFailed();
             }
         });
+    }
+
+
+    public static ArrayList<Article> removeDuplicates(ArrayList<Article> items) {
+        ArrayList<Article> l1 = new ArrayList(items);
+        ArrayList<Article> l2 = new ArrayList();
+
+        for (Article article1 : l1) {
+            boolean exists = false;
+            for (int i = 0; i < l2.size(); i++) {
+                if (l2.get(i).getTitle().equals(article1.getTitle()))
+                    exists = true;
+            }
+            if (!exists)
+                l2.add(article1);
+        }
+
+        return l2;
     }
 }

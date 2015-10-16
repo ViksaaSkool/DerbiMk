@@ -62,6 +62,8 @@
         <item>Шпанија</item>
         <item>Италија</item>
         <item>Германија</item>
+        <item>Франција</item>
+        <item>Балкан</item>
         <item>Свет</item>
         <item>Лига на Шампиони</item>
         <item>Лига Европа</item>
@@ -74,6 +76,7 @@
         <item>Македонија</item>
         <item>НБА</item>
         <item>Евролига</item>
+        <item>Еврокуп</item>
         <item>АБА лига</item>
         <item>БИБЛ лига</item>
         <item>Свет</item>
@@ -101,32 +104,29 @@
 
     <string-array name="motosportArr">
         <item>Формула 1</item>
-        <item>Рели</item>
         <item>Мото ГП</item>
-        <item>Екстремни спортови</item>
-        <item>МК трки</item>
-        <item>Меѓународни настани</item>
+        <item>Македонија</item>
+        <item>Свет</item>
     </string-array>
 
     <string-array name="sportPlusArr">
-        <item>Одбојка</item>
         <item>Атлетика</item>
-        <item>Велосипедизам</item>
-        <item>Скијање</item>
-        <item>Хокеј</item>
         <item>Пливање</item>
         <item>Ватерполо</item>
-        <item>Бокс</item>
+        <item>Велосипедизам</item>
+        <item>Одбојка</item>
+        <item>Зимски спортови</item>
+        <item>Боречки спортови</item>
+        <item>Екстремни спортови</item>
         <item>Меѓународни настани</item>
-        <item>Олимписки игри</item>
+        <item>Шах</item>
     </string-array>
 
     <string-array name="magazinArr">
         <item>Таблоид</item>
         <item>Млади спортисти</item>
         <item>Исхрана и вежбање</item>
-        <item>Автомобили</item>
-        <item>Типување</item>
+        <item>Автомобили</item>>
     </string-array>
 
     <string-array name="navDrawerMenu">

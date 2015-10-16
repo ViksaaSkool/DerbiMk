@@ -84,10 +84,10 @@ public class HomeFragment extends BaseFragment implements RSSCallback, View.OnCl
 
         LogUtil.dLog(Static.RSS_TAG, "onRssLoaded(ArrayList<Article> articles)");
         if (articles != null && !articles.isEmpty()) {
-            _articles = articles;
+            _articles = new ArrayList<>(articles);
 
             if (ValidationUtil.vRSSList(mArticles, _articles)) {
-                mArticles = articles;
+                mArticles = new ArrayList<>(articles);
                 mNewsRecyclerAdapter = new NewsAdapter(getBaseActivity(), mArticles);
                 mQrRecyclerView.setAdapter(mNewsRecyclerAdapter);
             } else {

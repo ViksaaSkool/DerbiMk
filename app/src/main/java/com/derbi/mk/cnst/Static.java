@@ -13,6 +13,7 @@ public class Static {
     public static final String N_TAG = "NOTFTAG";
     public static final String GF_TAG = "GENFTAG";
     public static final String P_TAG = "PATAG";
+    public static final String D_TAG = "DOUBLETAG";
 
     //Social const
     public static final String FACEBOOK_URI = "mk.derbi";

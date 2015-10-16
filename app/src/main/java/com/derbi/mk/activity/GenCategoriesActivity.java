@@ -125,23 +125,26 @@ public class GenCategoriesActivity extends BaseActivity {
 
 
     public void setToolbarSettings() {
-
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle(R.string.categories);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.categories);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
 
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
+
     }
 
+    @SuppressWarnings("unchecked")
     public void loadTitlesForPager(int c) {
         mCategory = c;
-        mTabTitles = new ArrayList<String>();
+        mTabTitles = new ArrayList<>();
 
         switch (mCategory) {
             case 0:
